@@ -36,7 +36,8 @@
                             @endforeach
                         </td>
                         <td>
-                            <a href="{{route('edit', $row->id)}}" class="btn btn-primary btn-sm">Edit</a>
+                            <a href="{{route('edit', $row->id)}}" class="btn btn-primary btn-sm">Edit</a> |
+                            <a href="{{route('check', $row->id)}}" class="btn btn-warning btn-sm">Check</a>
                         </td>
                     </tr>
                     @endforeach

@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect(route('index'));
 });
 
 Route::get('index', [GeofenceController::class, 'index'])->name('index');
@@ -23,3 +23,5 @@ Route::get('create', [GeofenceController::class, 'create'])->name('create');
 Route::post('store', [GeofenceController::class, 'store'])->name('store');
 Route::get('edit/{id}', [GeofenceController::class, 'edit'])->name('edit');
 Route::patch('update', [GeofenceController::class, 'update'])->name('update');
+Route::get('check/{id}', [GeofenceController::class, 'check'])->name('check');
+Route::post('check', [GeofenceController::class, 'checkPost'])->name('check.post');

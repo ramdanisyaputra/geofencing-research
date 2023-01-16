@@ -4,18 +4,17 @@
 </head>
 
 <body>
-    <h2>Google Maps Draw Polygon Get Coordinates Edit</h2>
+    <h2>Google Maps Check Inside / Outside</h2>
     <div id="map-canvas" style="height: 400px; width: 700px"></div>
-    <h4>Edit Coordinates (X,Y)</h4>
-    <form action="{{route('update')}}" method="POST">
+    <h4>Put lat and long, click submit for result inside/outside</h4>
+    <form action="{{route('check.post')}}" method="POST">
         @csrf
-        @method('PATCH')
-        <label for="">Name</label>
-        <input type="text" name="name" value="{{$geofence->name}}" required>
+        <label for="">lat</label>
+        <input type="text" name="lat">
         <br>
-        <input type="hidden" name="coordinates" id="coordinates" value="{{$geofence->coordinates}}" required>
-        <input type="hidden" name="id" value="{{$geofence->id}}" required>
-        <br>
+        <label for="">long</label>
+        <input type="text" name="long">
+        <input type="hidden" name="id" value="{{$geofence->id}}">
         <button type="submit">Submit</button>
     </form>
     <div id="info" style="position:absolute; color:red; font-family: Arial; height:200px; font-size: 12px;"></div>
